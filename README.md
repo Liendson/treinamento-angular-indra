@@ -1,27 +1,57 @@
-# TreinamentoAngular
+## Projeto Gestão de Alunos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+O objetivo do projeto é servir de base para o treinamento de "Formação Java/Angular para novos profissionais" da Indra, unidade de João Pessoa. Ministrado por Ivan Queiroz (ifbomfim@indracompany.com) e Liendson Douglas (ldouglas@indracompany.com).
 
-## Development server
+Este projeto é referente a parte 2 do [Treinamento][parte1].
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Documentação do Angular
 
-## Code scaffolding
+- [Angular][ng]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configurando o Ambiente de Desenvolvimento
 
-## Build
+- Instalar o [Node.js] com o [Node Package Manager][npm]
+- Utilizaremos o [Visual Studio Code][vscode] para desenvolvimento
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Instalar o [Angular Command Line (CLI)][cli] utilizando o seguinte comando:
 
-## Running unit tests
+```
+npm install -g @angular/cli
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Instalar o [TypeScript][typescript] utilizando o seguinte comando:
 
-## Running end-to-end tests
+```
+npm install -g typescript
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Instalar as dependências do projeto:
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Levantar a aplicação:
+
+```
+cd [PROJECT NAME]
+ng serve
+```
+
+### Arquitetura do projeto
+
+\node_modules - Diretório padrão para as dependências do projeto
+\src - Diretório raiz da aplicação;
+  \app - Diretório principal onde ficam os arquivos do projeto;
+    \core - Diretório para classes e services core do sistema;
+    \layouts - Diretório para adicionar os componentes de footer/header/sidebar e demais layouts
+    \shared - Diretório com componentes/diretivas/pipes compartilhados
+  \assets - Diretório para imagens e folhas de estilo (CSS) personalizadas
+  \environments - Diretório que armazena arquivos de variáveis de ambiente
+
+[ng]: https://angular.io
+[cli]: https://cli.angular.io/
+[npm]: https://www.npmjs.com/get-npm
+[vscode]: https://code.visualstudio.com/download
+[parte1]: https://github.com/ivanqueiroz/formacao-java
+[typescript]: https://www.typescriptlang.org/
