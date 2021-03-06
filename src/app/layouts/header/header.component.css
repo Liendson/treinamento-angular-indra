@@ -1,0 +1,43 @@
+/* Header */
+aside.header {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+aside.main-sidebar {
+  background: linear-gradient(145deg,#0d47a1,#42a5f5);
+  color: #fff;
+}
+
+[class*=sidebar-light] .brand-link {
+  border-bottom: none !important;
+}
+
+[class*=sidebar-light] .sidebar a {
+  color: #fff !important;
+}
+
+[class*=sidebar-light] .sidebar a:hover {
+  background-color: rgba(0,0,0,.1) !important;
+  color: #42a5f5 !important;
+}
+
+aside::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -3em;
+  right: 0;
+  background-color: #1976d2;
+  background: url('../../../assets/images/angular-background.png') top 0 left 0 repeat,
+              url('../../../assets/images/angular-background.png') top 80px left 160px repeat;
+  opacity: .05;
+  background-size: 320px auto;
+  rotate: (10px);
+}
+
+:not(.layout-fixed) .main-sidebar {
+  width: 10em;
+}

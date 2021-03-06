@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Estilos personalizados */
+a {
+  cursor: pointer;
+}
+
+input.form-control.ng-invalid.ng-untouched {
+  border: 1px solid #a94442
+}
+
+input.form-control.ng-valid.ng-untouched {
+  border: 1px solid #42a5f5
+}
+
+input.form-control.ng-invalid.ng-touched {
+  border: 1px solid #a94442
+}
+
+input.form-control.ng-valid.ng-touched {
+  border: 1px solid #42a5f5
+}
+
+select.form-control.ng-invalid.ng-untouched {
+  border: 1px solid #a94442
+}
+
+select.form-control.ng-valid.ng-untouched {
+  border: 1px solid #42a5f5
+}
+
+select.form-control.ng-invalid.ng-touched {
+  border: 1px solid #a94442
+}
+
+select.form-control.ng-valid.ng-touched {
+  border: 1px solid #42a5f5
+}

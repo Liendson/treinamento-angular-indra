@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrimeiroComponenteComponent } from './core/primeiro-componente/primeiro-componente.component';
-import { SegundoTesteComponent } from './core/segundo-teste/segundo-teste.component';
-import { TerceiroTesteComponent } from './core/terceiro-teste/terceiro-teste.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { IncluirComponent } from './core/alunos/incluir/incluir.component';
+import { ListarComponent } from './core/alunos/listar/listar.component';
+import { CardComponent } from './layouts/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrimeiroComponenteComponent,
-    SegundoTesteComponent,
-    TerceiroTesteComponent
+    HeaderComponent,
+    IncluirComponent,
+    ListarComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

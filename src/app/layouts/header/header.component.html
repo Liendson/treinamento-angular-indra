@@ -1,0 +1,43 @@
+<!-- Main Sidebar Container -->
+<aside class="header">
+  <span class="nav-link">
+    <img src="favicon.ico" data-widget="pushmenu">
+  </span>
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
+    <a class="brand-link text-center">
+      <a class="nav-link" data-widget="pushmenu">
+        <img src="favicon.ico">
+      </a>
+    </a>
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+          <li class="nav-item">
+            <a class="nav-link" (click)="mudarRota('/')">
+              <i class="nav-icon fas fa-home"></i>
+              <p> Início</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a class="nav-link">
+              <i class="nav-icon fas fa-users fa-do"></i>
+              <p>Menu<i class="right fas fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a class="nav-link" (click)="mudarRota('alunos/incluir')">
+                  <p>Incluir</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="mudarRota('alunos/listar')">
+                  <p>Listar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+</aside>

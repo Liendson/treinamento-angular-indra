@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PrimeiroComponenteComponent } from './core/primeiro-componente/primeiro-componente.component';
-import { SegundoTesteComponent } from './core/segundo-teste/segundo-teste.component';
+import { IncluirComponent } from './core/alunos/incluir/incluir.component';
+import { ListarComponent } from './core/alunos/listar/listar.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: PrimeiroComponenteComponent
+    path: 'alunos/incluir',
+    component: IncluirComponent
   },
   {
-    path: 'alunos',
-    component: SegundoTesteComponent
+    path: 'alunos/listar',
+    component: ListarComponent
   }
 ];
 
