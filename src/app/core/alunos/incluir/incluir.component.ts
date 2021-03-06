@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Aluno } from 'src/app/shared/model/aluno';
+import { SweetAlert } from 'src/app/shared/sweet-alert';
 import { environment } from 'src/environments/environment';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-incluir',
@@ -36,27 +36,20 @@ export class IncluirComponent implements OnInit {
   }
 
   submit() {
-
     if (this.formulario.valid) {
       const aluno: Aluno = new Aluno();
 
       aluno.nome = this.nome.value;
       aluno.email = this.email.value;
       aluno.nota = this.nota.value;
-  
-      this.httpClient.post(environment.urlBackEnd, aluno).subscribe((retorno) => {
-        Swal.fire(
-          'Sucesso!',
-          'Aluno incluído com sucesso!',
-          'success'
-        )
+
+      this.httpClient.post(environment.urlBackEnd, aluno).subscribe((retorno: Aluno) => {
+        SweetAlert.exibirSucesso('Sucesso!', 'Aluno ' + retorno.nome + ' incluído com sucesso!')
+      }, (erro) => {
+        SweetAlert.exibirErro('Erro!', erro.error.nome)
       })
     } else {
-      Swal.fire(
-        'Erro!',
-        'Formulário Inválido',
-        'error'
-      )
+      SweetAlert.exibirErro('Erro!', 'Formulário Inválido')
     }
   }
 
