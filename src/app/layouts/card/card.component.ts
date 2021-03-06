@@ -16,8 +16,8 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  esconderFooter() {
-    this.showFooter = false;
+  esconderFooter(event) {
+    console.log(event);
   }
 
 }

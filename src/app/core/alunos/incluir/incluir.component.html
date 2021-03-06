@@ -1,3 +1,33 @@
-<app-card [titulo]="'Título'" [showFooter]="true">
-  <app-card [titulo]="'Segundo Título'"></app-card>
+<app-card [titulo]="'Formulários'" [showFooter]="true">
+  <div class="form-group">
+
+    <label>Nome: {{ nome }}</label>
+    <input type="text" class="form-control" [value]="nome">
+
+    <label>Email: {{ email }}</label>
+    <input type="text" class="form-control" [value]="email" (input)="setEmail($event)">
+
+    <label>Nota: {{ nota }}</label>
+    <input type="text" class="form-control" [(ngModel)]="nota" [ngModelOptions]="{ standalone: true }">
+
+  </div>
+</app-card>
+
+<app-card [titulo]="'Formulários Reativos'" [showFooter]="true">
+  <form [formGroup]="formulario">
+    <div class="form-group">
+
+      <label>Nome:</label>
+      <input type="text" class="form-control" formControlName="nome">
+
+      <label>Email:</label>
+      <input type="text" class="form-control" formControlName="email">
+
+      <label>Nota:</label>
+      <input type="text" class="form-control" formControlName="nota">
+
+      <app-button (click)="visualizarFormulario()"> Visualizar</app-button>
+
+    </div>
+  </form>
 </app-card>

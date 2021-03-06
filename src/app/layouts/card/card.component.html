@@ -6,7 +6,7 @@
     <ng-content></ng-content>
   </div>
   <div class="card-footer text-center" *ngIf="showFooter">
-    <app-button [buttonType]="'primary'" (click)="esconderFooter()"> Confirmar</app-button>
+    <app-button [buttonType]="'primary'" (emitirDados)="esconderFooter($event)"> Confirmar</app-button>
     <!-- <app-button [buttonType]="'secondary'"> Voltar</app-button> -->
   </div>
 </div>

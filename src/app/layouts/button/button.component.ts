@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -9,18 +9,24 @@ export class ButtonComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @Input() buttonType: string;
 
+  @Output() emitirDados = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
-    alert('Componente de botão Iniciado')
+    // alert('Componente de botão Iniciado');
   }
 
   ngOnDestroy() {
-    alert('Componente de botão Destruido')
+    // alert('Componente de botão Destruido');
   }
 
   ngAfterViewInit() {
-    alert('Componente de botão Iniciado após carregar')
+    // alert('Componente de botão Iniciado após carregar');
+  }
+
+  click() {
+    this.emitirDados.emit('Valor Emitido');
   }
 
   obterClasseBotao(): string {

@@ -1,4 +1,4 @@
-<button [ngClass]="obterClasseBotao()">
+<button [ngClass]="obterClasseBotao()" (click)="click()">
   <span [ngClass]="obterIconeBotao()"></span>
   <ng-content></ng-content>
 </button>

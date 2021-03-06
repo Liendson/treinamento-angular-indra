@@ -9,6 +9,7 @@ import { ListarComponent } from './core/alunos/listar/listar.component';
 import { CardComponent } from './layouts/card/card.component';
 import { ButtonComponent } from './layouts/button/button.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
