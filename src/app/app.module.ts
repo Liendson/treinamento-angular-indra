@@ -7,6 +7,8 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { IncluirComponent } from './core/alunos/incluir/incluir.component';
 import { ListarComponent } from './core/alunos/listar/listar.component';
 import { CardComponent } from './layouts/card/card.component';
+import { ButtonComponent } from './layouts/button/button.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { CardComponent } from './layouts/card/card.component';
     IncluirComponent,
     ListarComponent,
     CardComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,12 @@
 <div class="card">
   <div class="card-header">
-    Quote
+    {{ titulo }}
   </div>
   <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>A well-known quote, contained in a blockquote element.</p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
+    <ng-content></ng-content>
+  </div>
+  <div class="card-footer text-center" *ngIf="showFooter">
+    <app-button [iconClass]="'fa fa-check'"> Confirmar</app-button>
+    <app-button [iconClass]="'fa fa-angle-left'"> Voltar</app-button>
   </div>
 </div>
