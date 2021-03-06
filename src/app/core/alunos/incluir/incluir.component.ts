@@ -1,5 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Aluno } from 'src/app/shared/model/aluno';
+import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-incluir',
@@ -8,16 +12,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class IncluirComponent implements OnInit {
 
-  public nome: string = 'Liendson';
-  public email: string = 'liendsondouglas1@gmail.com';
-  public nota: number = 1;
-
   public formulario: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  get nome(): any { return this.formulario.get('nome') }
+  get email(): any { return this.formulario.get('email') }
+  get nota(): any { return this.formulario.get('nota') }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private httpClient: HttpClient
+  ) { }
 
   ngOnInit(): void {
-    this.configurarFormulario()
+    this.configurarFormulario();
   }
 
   configurarFormulario() {
@@ -28,13 +35,29 @@ export class IncluirComponent implements OnInit {
     })
   }
 
-  visualizarFormulario() {
-    console.log(this.formulario)
-  }
+  submit() {
 
-  setEmail(event) {
-    // console.log(event)
-    this.email = event.target.value
+    if (this.formulario.valid) {
+      const aluno: Aluno = new Aluno();
+
+      aluno.nome = this.nome.value;
+      aluno.email = this.email.value;
+      aluno.nota = this.nota.value;
+  
+      this.httpClient.post(environment.urlBackEnd, aluno).subscribe((retorno) => {
+        Swal.fire(
+          'Sucesso!',
+          'Aluno incluído com sucesso!',
+          'success'
+        )
+      })
+    } else {
+      Swal.fire(
+        'Erro!',
+        'Formulário Inválido',
+        'error'
+      )
+    }
   }
 
 }
