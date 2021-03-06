@@ -1,6 +1,4 @@
-<button class="btn btn-primary">
-  <span [ngClass]="iconClass"></span>
-  <!-- <span [ngClass]="iconClass ? iconClass : '' "></span>
-  <span [ngClass]="{ iconClass : iconClass }"></span> -->
+<button [ngClass]="obterClasseBotao()">
+  <span [ngClass]="obterIconeBotao()"></span>
   <ng-content></ng-content>
 </button>
