@@ -3,14 +3,25 @@ import { Routes, RouterModule } from '@angular/router';
 import { EditarComponent } from './core/alunos/editar/editar.component';
 import { IncluirComponent } from './core/alunos/incluir/incluir.component';
 import { ListarComponent } from './core/alunos/listar/listar.component';
+import { LoginComponent } from './core/login/login.component';
 import { PaginaInicialComponent } from './layouts/pages/pagina-inicial/pagina-inicial.component';
 import { PaginaNaoEncontradaComponent } from './layouts/pages/pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { VerificarPermissaoGuard } from './shared/guards/verificar-permissao.guard';
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: '',
-    component: PaginaInicialComponent
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: PaginaInicialComponent,
+    canActivate: [VerificarPermissaoGuard]
   },
   {
     path: 'alunos/incluir',
@@ -19,15 +30,18 @@ const routes: Routes = [
   },
   {
     path: 'alunos/listar',
-    component: ListarComponent
+    component: ListarComponent,
+    canActivate: [VerificarPermissaoGuard]
   },
   {
     path: 'alunos/editar/:id',
-    component: EditarComponent
+    component: EditarComponent,
+    canActivate: [VerificarPermissaoGuard]
   },
   {
     path: '**',
-    component: PaginaNaoEncontradaComponent
+    component: PaginaNaoEncontradaComponent,
+    canActivate: [VerificarPermissaoGuard]
   },
 ];
 

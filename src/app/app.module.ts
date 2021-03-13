@@ -17,6 +17,7 @@ import { CustomPipe } from './shared/pipes/custom.pipe';
 import { PaginaNaoEncontradaComponent } from './layouts/pages/pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { PaginaInicialComponent } from './layouts/pages/pagina-inicial/pagina-inicial.component';
 import { HttpErrorInterceptor } from './shared/http-error.interceptor';
+import { LoginComponent } from './core/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HttpErrorInterceptor } from './shared/http-error.interceptor';
     CustomPipe,
     PaginaNaoEncontradaComponent,
     PaginaInicialComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

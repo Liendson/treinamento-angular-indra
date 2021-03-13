@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from './core/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'treinamento-angular';
+
+  public usuarioLogado = LoginComponent.usuarioLogado
 }

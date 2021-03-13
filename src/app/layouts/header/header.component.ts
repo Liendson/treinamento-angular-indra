@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
+import { LoginComponent } from 'src/app/core/login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +10,21 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() usuarioLogado;
+
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   mudarRota(rota: string): void {
     this.router.navigate([rota])
+  }
+
+  logout() {
+    window.localStorage.clear();
+    LoginComponent.usuarioLogado = null;
+    this.usuarioLogado = null;
+    this.mudarRota('/login');
   }
 
 }
