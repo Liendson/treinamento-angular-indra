@@ -2,17 +2,17 @@ import Swal from 'sweetalert2';
 
 export class SweetAlert {
 
-  static exibirSucesso(titulo: string, mensagem: string) {
-    Swal.fire(
-      titulo,
+  static exibirSucesso(mensagem: string) {
+    return Swal.fire(
+      'Sucesso!',
       mensagem,
       'success'
     );
   }
 
-  static exibirErro(titulo: string, mensagem: string) {
-    Swal.fire(
-      titulo,
+  static exibirErro(mensagem: string) {
+    return Swal.fire(
+      'Erro!',
       mensagem,
       'error'
     );

@@ -1,1 +1,21 @@
-<p>listar works!</p>
+<app-card [titulo]="'Listar Alunos'">
+  <table class="table table-bordered">
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Nota</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let aluno of listaDeAlunos">
+      <td>{{ aluno.nome }}</td>
+      <td>{{ aluno.email }}</td>
+      <td>{{ aluno.nota }}</td>
+      <td>
+        <div class="btn-group">
+          <button class="btn btn-primary"> Editar</button>
+          <button class="btn btn-primary" (click)="excluirAluno(aluno.id)"> Excluir</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</app-card>

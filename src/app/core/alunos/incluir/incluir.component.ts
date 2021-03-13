@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Aluno } from 'src/app/shared/model/aluno';
+import { AlunosService } from 'src/app/shared/services/alunos.service';
 import { SweetAlert } from 'src/app/shared/sweet-alert';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-incluir',
@@ -20,7 +19,7 @@ export class IncluirComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private httpClient: HttpClient
+    private alunosService: AlunosService
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +42,7 @@ export class IncluirComponent implements OnInit {
       aluno.email = this.email.value;
       aluno.nota = this.nota.value;
 
-      this.httpClient.post(environment.urlBackEnd, aluno).subscribe((retorno: Aluno) => {
+      this.alunosService.incluir(aluno).subscribe((retorno: Aluno) => {
         SweetAlert.exibirSucesso('Sucesso!', 'Aluno ' + retorno.nome + ' incluído com sucesso!')
       }, (erro) => {
         SweetAlert.exibirErro('Erro!', erro.error.nome)
