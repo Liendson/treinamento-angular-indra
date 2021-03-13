@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './core/alunos/editar/editar.component';
 import { TableModule } from 'primeng/table';
 import { CustomPipe } from './shared/pipes/custom.pipe';
+import { PaginaNaoEncontradaComponent } from './layouts/pages/pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { PaginaInicialComponent } from './layouts/pages/pagina-inicial/pagina-inicial.component';
+import { HttpErrorInterceptor } from './shared/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { CustomPipe } from './shared/pipes/custom.pipe';
     ButtonComponent,
     EditarComponent,
     CustomPipe,
+    PaginaNaoEncontradaComponent,
+    PaginaInicialComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,13 @@ import { CustomPipe } from './shared/pipes/custom.pipe';
     HttpClientModule,
     TableModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -44,8 +44,6 @@ export class IncluirComponent implements OnInit {
 
       this.alunosService.incluir(aluno).subscribe((retorno: Aluno) => {
         SweetAlert.exibirSucesso('Aluno ' + retorno.nome + ' incluído com sucesso!')
-      }, (erro) => {
-        SweetAlert.exibirErro(erro.error.nome)
       })
     } else {
       SweetAlert.exibirErro('Formulário Inválido')
