@@ -12,6 +12,7 @@ import { ButtonComponent } from './layouts/button/button.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './core/alunos/editar/editar.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EditarComponent } from './core/alunos/editar/editar.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
