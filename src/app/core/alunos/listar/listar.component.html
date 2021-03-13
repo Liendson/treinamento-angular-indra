@@ -21,7 +21,7 @@
 </app-card> -->
 
 <app-card [titulo]="'Listar Alunos'">
-  <p-table [value]="listaDeAlunos" [paginator]="true" [rows]="10">
+  <p-table [value]="listaDeAlunos" [paginator]="true" [rows]="5">
     <ng-template pTemplate="header">
       <tr>
         <th>Nome</th>
@@ -32,7 +32,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-aluno>
       <tr>
-        <td>{{ aluno.nome }}</td>
+        <td>{{ aluno.nome | titlecase }}</td>
         <td>{{ aluno.email }}</td>
         <td>{{ aluno.nota }}</td>
         <td>

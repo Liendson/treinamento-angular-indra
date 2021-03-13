@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { EditarComponent } from './core/alunos/editar/editar.component';
 import { IncluirComponent } from './core/alunos/incluir/incluir.component';
 import { ListarComponent } from './core/alunos/listar/listar.component';
+import { VerificarPermissaoGuard } from './shared/guards/verificar-permissao.guard';
 
 const routes: Routes = [
   {
     path: 'alunos/incluir',
-    component: IncluirComponent
+    component: IncluirComponent,
+    canActivate: [VerificarPermissaoGuard]
   },
   {
     path: 'alunos/listar',

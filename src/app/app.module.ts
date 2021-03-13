@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './core/alunos/editar/editar.component';
 import { TableModule } from 'primeng/table';
+import { CustomPipe } from './shared/pipes/custom.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TableModule } from 'primeng/table';
     CardComponent,
     ButtonComponent,
     EditarComponent,
+    CustomPipe,
   ],
   imports: [
     BrowserModule,
