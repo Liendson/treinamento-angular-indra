@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Aluno } from 'src/app/shared/model/aluno';
 import { AlunosService } from 'src/app/shared/services/alunos.service';
 import { SweetAlert } from 'src/app/shared/sweet-alert';
@@ -12,7 +13,10 @@ export class ListarComponent implements OnInit {
 
   public listaDeAlunos: Array<Aluno> = new Array<Aluno>();
 
-  constructor(private alunosService: AlunosService) { }
+  constructor(
+    private alunosService: AlunosService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.alunosService.buscar().subscribe((alunos: Array<Aluno>) => {
@@ -28,6 +32,10 @@ export class ListarComponent implements OnInit {
         })
       });
     })
+  }
+
+  editarAluno(id) {
+    this.router.navigate([`alunos/editar/${id}`])
   }
 
 }

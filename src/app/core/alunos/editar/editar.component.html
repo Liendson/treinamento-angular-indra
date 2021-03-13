@@ -1,0 +1,18 @@
+<app-card [titulo]="'Formulários Reativos'">
+  <form [formGroup]="formulario">
+    <div class="form-group">
+
+      <label>Nome:</label>
+      <input type="text" class="form-control" formControlName="nome">
+
+      <label>Email:</label>
+      <input type="text" class="form-control" formControlName="email">
+
+      <label>Nota:</label>
+      <input type="text" class="form-control" formControlName="nota">
+
+      <app-button (click)="submit()"> Enviar</app-button>
+
+    </div>
+  </form>
+</app-card>

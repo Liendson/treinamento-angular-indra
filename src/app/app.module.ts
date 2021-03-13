@@ -11,6 +11,7 @@ import { CardComponent } from './layouts/card/card.component';
 import { ButtonComponent } from './layouts/button/button.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditarComponent } from './core/alunos/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListarComponent,
     CardComponent,
     ButtonComponent,
+    EditarComponent,
   ],
   imports: [
     BrowserModule,
