@@ -1,7 +1,8 @@
 <!-- Main Sidebar Container -->
-<aside class="header">
+<aside class="header" *ngIf="usuarioLogado()">
   <span class="nav-link">
-    <img src="favicon.ico" data-widget="pushmenu">
+    <img class="main-img" src="../../../assets/images/logo-angular-header.png" data-widget="pushmenu">
+    <a class="logout" (click)="logout()"><i class="nav-icon fas fa-sign-out-alt"></i> Logout</a>
   </span>
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <a class="brand-link text-center">
@@ -13,10 +14,6 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
           <li class="nav-item">
-            <a class="nav-link" (click)="logout()">
-              <i class="nav-icon fas fa-home"></i>
-              <p> Logout</p>
-            </a>
             <a class="nav-link" (click)="mudarRota('/')">
               <i class="nav-icon fas fa-home"></i>
               <p> Início</p>

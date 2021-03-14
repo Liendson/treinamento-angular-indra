@@ -41,3 +41,13 @@ aside::after {
 :not(.layout-fixed) .main-sidebar {
   width: 10em;
 }
+
+.logout {
+  float: right;
+  margin-top: 0.6em;
+  color: #fff;
+}
+
+img.main-img {
+  width: 10em;
+}

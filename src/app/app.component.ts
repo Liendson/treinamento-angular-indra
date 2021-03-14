@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoginComponent } from './core/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { LoginComponent } from './core/login/login.component';
 })
 export class AppComponent {
 
-  public usuarioLogado = LoginComponent.usuarioLogado
 }
