@@ -18,6 +18,8 @@ import { PaginaNaoEncontradaComponent } from './layouts/pages/pagina-nao-encontr
 import { PaginaInicialComponent } from './layouts/pages/pagina-inicial/pagina-inicial.component';
 import { HttpErrorInterceptor } from './shared/http-error.interceptor';
 import { LoginComponent } from './core/login/login.component';
+import { TwoWayDataBindingComponent } from './core/two-way/two-way-data-binding/two-way-data-binding.component';
+import { ComponenteBasicoComponent } from './core/two-way/componente-basico/componente-basico.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { LoginComponent } from './core/login/login.component';
     PaginaNaoEncontradaComponent,
     PaginaInicialComponent,
     LoginComponent,
+    TwoWayDataBindingComponent,
+    ComponenteBasicoComponent,
   ],
   imports: [
     BrowserModule,
